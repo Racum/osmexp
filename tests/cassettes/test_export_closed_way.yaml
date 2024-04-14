@@ -1,0 +1,55 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate
+      Connection:
+      - keep-alive
+      User-Agent:
+      - python-requests/2.31.0
+    method: GET
+    uri: https://www.openstreetmap.org/api/0.6/way/430963095/full.json
+  response:
+    body:
+      string: "{\"version\":\"0.6\",\"generator\":\"CGImap 0.9.0 (1474362 spike-06.openstreetmap.org)\",\"copyright\":\"OpenStreetMap
+        and contributors\",\"attribution\":\"http://www.openstreetmap.org/copyright\",\"license\":\"http://opendatacommons.org/licenses/odbl/1-0/\",\"elements\":[{\"type\":\"node\",\"id\":2904552006,\"lat\":45.4333598,\"lon\":12.3398728,\"timestamp\":\"2023-02-22T08:13:42Z\",\"version\":11,\"changeset\":132867278,\"user\":\"ivanbranco\",\"uid\":11220113},{\"type\":\"node\",\"id\":4302156687,\"lat\":45.4333749,\"lon\":12.3398939,\"timestamp\":\"2016-07-14T13:21:34Z\",\"version\":2,\"changeset\":40739347,\"user\":\"marek
+        kleciak\",\"uid\":338611},{\"type\":\"node\",\"id\":4302156688,\"lat\":45.4333386,\"lon\":12.3398731,\"timestamp\":\"2016-07-14T13:21:35Z\",\"version\":2,\"changeset\":40739347,\"user\":\"marek
+        kleciak\",\"uid\":338611},{\"type\":\"node\",\"id\":4302159789,\"lat\":45.4333603,\"lon\":12.3399457,\"timestamp\":\"2016-07-14T13:21:35Z\",\"version\":2,\"changeset\":40739347,\"user\":\"marek
+        kleciak\",\"uid\":338611},{\"type\":\"node\",\"id\":4302159790,\"lat\":45.4333237,\"lon\":12.3398947,\"timestamp\":\"2016-07-14T13:21:35Z\",\"version\":2,\"changeset\":40739347,\"user\":\"marek
+        kleciak\",\"uid\":338611},{\"type\":\"node\",\"id\":4302159791,\"lat\":45.4333391,\"lon\":12.3399460,\"timestamp\":\"2016-07-14T13:21:36Z\",\"version\":2,\"changeset\":40739347,\"user\":\"marek
+        kleciak\",\"uid\":338611},{\"type\":\"node\",\"id\":4302159792,\"lat\":45.4333240,\"lon\":12.3399249,\"timestamp\":\"2016-07-14T13:21:36Z\",\"version\":2,\"changeset\":40739347,\"user\":\"marek
+        kleciak\",\"uid\":338611},{\"type\":\"node\",\"id\":4302159801,\"lat\":45.4333751,\"lon\":12.3399241,\"timestamp\":\"2016-07-14T13:21:36Z\",\"version\":2,\"changeset\":40739347,\"user\":\"marek
+        kleciak\",\"uid\":338611},{\"type\":\"way\",\"id\":430963095,\"timestamp\":\"2023-08-21T19:40:38Z\",\"version\":25,\"changeset\":140198218,\"user\":\"secondaryhighway\",\"uid\":19233464,\"nodes\":[2904552006,4302156688,4302159790,4302159792,4302159791,4302159789,4302159801,4302156687,2904552006],\"tags\":{\"building\":\"column\",\"height\":\"0.4\",\"historic\":\"column\",\"name\":\"Colonna
+        di San Marco\",\"name:cs\":\"Sloup svat\xE9ho Marka\",\"name:en\":\"Column
+        of Saint Mark\",\"name:ru\":\"\u041A\u043E\u043B\u043E\u043D\u043D\u0430 \u0421\u0432\u044F\u0442\u043E\u0433\u043E
+        \u041C\u0430\u0440\u043A\u0430\",\"start_date\":\"1178\",\"tourism\":\"attraction\",\"wheelchair\":\"yes\",\"wikidata\":\"Q19689881\",\"wikimedia_commons\":\"Category:Column
+        of the Lion in Piazzetta San Marco (Venice)\",\"wikipedia\":\"it:Colonne di
+        San Marco e San Todaro\"}}]}"
+    headers:
+      Cache-Control:
+      - private, max-age=0, must-revalidate
+      Connection:
+      - Upgrade, Keep-Alive
+      Content-Encoding:
+      - gzip
+      Content-Type:
+      - application/json; charset=utf-8
+      Date:
+      - Sun, 14 Apr 2024 14:00:24 GMT
+      Keep-Alive:
+      - timeout=5, max=100
+      Server:
+      - Apache/2.4.54 (Ubuntu)
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Transfer-Encoding:
+      - chunked
+      Upgrade:
+      - h2,h2c
+    status:
+      code: 200
+      message: OK
+version: 1
