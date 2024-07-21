@@ -1,6 +1,9 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 
 import sys
+import argparse
+import os
+
 
 from .geojson import export_node, export_relation, export_way
 
@@ -15,30 +18,41 @@ Output: A GeoJSON representation of the element.
 """
 
 def main():
-
-    if len(sys.argv) != 3 or (len(sys.argv) == 2 and sys.argv[1] in ['-h', '--help']):
-        print(HELP)
+    parser = argparse.ArgumentParser(description='Export OpenStreetMap data to GeoJSON', epilog='Output: A GeoJSON representation of the element.')
+    parser.add_argument('element', help='The OSM element type, options: "rel", "way" or "node".')
+    parser.add_argument('id', help='The OSM element ID: an integer number.')
+    parser.add_argument('--dir', help='Write output to DIR/$featurename.json')
+    args = parser.parse_args()
+    
+    if not args.element and args.id :
+        print(HELP, file=sys.stderr)
         sys.exit()
 
-    if sys.argv[1].lower() not in ['rel', 'way', 'node']:
-        print('Unknown element type, please use "rel", "way" or "node".')
+    if args.element not in ['rel', 'way', 'node']:
+        print('Unknown element type, please use "rel", "way" or "node".', file=sys.stderr)
         sys.exit()
 
-    if not sys.argv[2].isdigit():
-        print('Element ID should be an integer.')
+    if not args.id.isdigit():
+        print('Element ID should be an integer.', file=sys.stderr)
         sys.exit()
 
-    element_type = sys.argv[1].lower()
-    element_id = sys.argv[2]
-
+    element_type = args.element.lower()
+    element_id = args.id
+    output: str
     match element_type:
         case 'node':
-            print(export_node(element_id))
+            output = export_node(element_id)
         case 'way':
-            print(export_way(element_id))
+            output = export_way(element_id)
         case 'rel':
-            print(export_relation(element_id))
-
+            output = export_relation(element_id)
+    if not args.dir :
+        print(output[0])
+    else :
+        f = open(os.path.join(args.dir, f'{output[1]}.json'), 'w')
+        f.write(output[0])
+        f.write('\n')
+        f.close()
 
 if __name__ == '__main__':
     main()
