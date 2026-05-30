@@ -1,5 +1,0 @@
--r base.txt
-
-pytest
-pytest-vcr
-ruff

@@ -1,0 +1,55 @@
+interactions:
+- request:
+    body: null
+    headers:
+      Accept:
+      - '*/*'
+      Accept-Encoding:
+      - gzip, deflate, zstd
+      Connection:
+      - keep-alive
+      User-Agent:
+      - osmexp/0.1.0 (+https://github.com/racum/osmexp)
+    method: GET
+    uri: https://api.openstreetmap.org/api/0.6/node/9589344640.json
+  response:
+    body:
+      string: '{"version":"0.6","generator":"openstreetmap-cgimap 2.1.0 (1180199 spike-06.openstreetmap.org)","copyright":"OpenStreetMap
+        and contributors","attribution":"http://www.openstreetmap.org/copyright","license":"http://opendatacommons.org/licenses/odbl/1-0/","elements":[{"type":"node","id":9589344640,"lat":45.4331611,"lon":12.3394685,"timestamp":"2022-03-19T08:16:41Z","version":2,"changeset":118656956,"user":"didapike","uid":9397053,"tags":{"leisure":"outdoor_seating"}}]}'
+    headers:
+      Accept-Ranges:
+      - bytes
+      Connection:
+      - keep-alive
+      Date:
+      - Sat, 30 May 2026 08:45:54 GMT
+      Vary:
+      - Accept-Encoding
+      Via:
+      - 1.1 varnish
+      X-Cache:
+      - MISS, MISS
+      X-Cache-Hits:
+      - 0, 0
+      X-Served-By:
+      - cache-mad22041-MAD, cache-mad22041-MAD
+      X-Timer:
+      - S1780130754.469968,VS0,VE115
+      alt-svc:
+      - h3=":443";ma=86400,h3-29=":443";ma=86400,h3-27=":443";ma=86400
+      cache-control:
+      - private, max-age=0, must-revalidate
+      content-encoding:
+      - gzip
+      content-type:
+      - application/json; charset=utf-8
+      server:
+      - Apache
+      strict-transport-security:
+      - max-age=31536000; includeSubDomains; preload
+      transfer-encoding:
+      - chunked
+    status:
+      code: 200
+      message: OK
+version: 1

@@ -1,25 +1,59 @@
+[build-system]
+requires = ["setuptools>=61", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "osmexp"
+version = "0.2.0"
+description = "OpenStreetMap GeoJSON Exporter"
+readme = "README.md"
+license = "BSD-3-Clause"
+requires-python = ">=3.11"
+authors = [{ name = "Ronaldo Ferreira", email = "ronaldo@racum.com" }]
+dependencies = ["requests", "shapely"]
+classifiers = [
+    "Development Status :: 2 - Pre-Alpha",
+    "Intended Audience :: Developers",
+    "Natural Language :: English",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+]
+
+[project.urls]
+Source = "https://github.com/racum/osmexp"
+
+[project.optional-dependencies]
+dev = ["pytest", "pytest-recording", "vcrpy", "ruff"]
+
+[project.scripts]
+osmexp = "osmexp.__main__:main"
+
+[tool.setuptools]
+packages = ["osmexp"]
+
 [tool.black]
 line-length = 120
 target-version = ['py311']
 include = '\.pyi?$'
 skip-string-normalization = true
 
+[tool.ruff]
+target-version = "py311"
+line-length = 120
+lint.select = ["E", "F", "TID", "I", "B", "PGH", "UP", "A", "C4", "PIE", "T20", "RSE", "RET", "SIM", "ARG", "PTH", "ERA", "PL", "RUF"]
+
 [tool.ruff.format]
 quote-style = "single"
+
+[tool.ruff.lint.per-file-ignores]
+"tests/*" = ["PLR2004"]
+"osmexp/__main__.py" = ["PLR2004", "T201"]
 
 [[tool.mypy.overrides]]
 module = "shapely.*"
 ignore_missing_imports = true
 
-[build-system]
-requires = ["setuptools", "wheel"]
-build-backend = "setuptools.build_meta"
-
-[tool.ruff]
-target-version = "py311"
-lint.select = ["E", "F", "TID", "I", "B", "PGH", "UP", "A", "C4", "PIE", "T20", "RSE", "RET", "SIM", "ARG", "PTH", "ERA", "PL", "RUF"]
-line-length = 120
-
-[tool.ruff.lint.per-file-ignores]
-"tests/*" = ["PLR2004"]
-"osmexp/__main__.py" = ["PLR2004", "T201"]
+[tool.pytest.ini_options]
+addopts = "--record-mode=none"

@@ -5,17 +5,17 @@ interactions:
       Accept:
       - '*/*'
       Accept-Encoding:
-      - gzip, deflate
+      - gzip, deflate, zstd
       Connection:
       - keep-alive
       User-Agent:
-      - python-requests/2.31.0
+      - osmexp/0.1.0 (+https://github.com/racum/osmexp)
     method: GET
-    uri: https://www.openstreetmap.org/api/0.6/way/430963095/full.json
+    uri: https://api.openstreetmap.org/api/0.6/way/430963095/full.json
   response:
     body:
-      string: "{\"version\":\"0.6\",\"generator\":\"CGImap 0.9.0 (331834 spike-08.openstreetmap.org)\",\"copyright\":\"OpenStreetMap
-        and contributors\",\"attribution\":\"http://www.openstreetmap.org/copyright\",\"license\":\"http://opendatacommons.org/licenses/odbl/1-0/\",\"elements\":[{\"type\":\"node\",\"id\":2904552006,\"lat\":45.4333598,\"lon\":12.3398728,\"timestamp\":\"2023-02-22T08:13:42Z\",\"version\":11,\"changeset\":132867278,\"user\":\"ivanbranco\",\"uid\":11220113},{\"type\":\"node\",\"id\":4302156687,\"lat\":45.4333749,\"lon\":12.3398939,\"timestamp\":\"2016-07-14T13:21:34Z\",\"version\":2,\"changeset\":40739347,\"user\":\"marek
+      string: "{\"version\":\"0.6\",\"generator\":\"openstreetmap-cgimap 2.1.0 (1292
+        spike-06.openstreetmap.org)\",\"copyright\":\"OpenStreetMap and contributors\",\"attribution\":\"http://www.openstreetmap.org/copyright\",\"license\":\"http://opendatacommons.org/licenses/odbl/1-0/\",\"elements\":[{\"type\":\"node\",\"id\":2904552006,\"lat\":45.4333598,\"lon\":12.3398728,\"timestamp\":\"2023-02-22T08:13:42Z\",\"version\":11,\"changeset\":132867278,\"user\":\"ivanbranco\",\"uid\":11220113},{\"type\":\"node\",\"id\":4302156687,\"lat\":45.4333749,\"lon\":12.3398939,\"timestamp\":\"2016-07-14T13:21:34Z\",\"version\":2,\"changeset\":40739347,\"user\":\"marek
         kleciak\",\"uid\":338611},{\"type\":\"node\",\"id\":4302156688,\"lat\":45.4333386,\"lon\":12.3398731,\"timestamp\":\"2016-07-14T13:21:35Z\",\"version\":2,\"changeset\":40739347,\"user\":\"marek
         kleciak\",\"uid\":338611},{\"type\":\"node\",\"id\":4302159789,\"lat\":45.4333603,\"lon\":12.3399457,\"timestamp\":\"2016-07-14T13:21:35Z\",\"version\":2,\"changeset\":40739347,\"user\":\"marek
         kleciak\",\"uid\":338611},{\"type\":\"node\",\"id\":4302159790,\"lat\":45.4333237,\"lon\":12.3398947,\"timestamp\":\"2016-07-14T13:21:35Z\",\"version\":2,\"changeset\":40739347,\"user\":\"marek
@@ -29,26 +29,38 @@ interactions:
         of the Lion in Piazzetta San Marco (Venice)\",\"wikipedia\":\"it:Colonne di
         San Marco e San Todaro\"}}]}"
     headers:
-      Cache-Control:
-      - private, max-age=0, must-revalidate
+      Accept-Ranges:
+      - bytes
       Connection:
-      - Upgrade, Keep-Alive
-      Content-Encoding:
-      - gzip
-      Content-Type:
-      - application/json; charset=utf-8
+      - keep-alive
       Date:
-      - Sun, 14 Apr 2024 13:28:23 GMT
-      Keep-Alive:
-      - timeout=5, max=100
-      Server:
-      - Apache/2.4.54 (Ubuntu)
-      Strict-Transport-Security:
+      - Sat, 30 May 2026 08:45:53 GMT
+      Vary:
+      - Accept-Encoding
+      Via:
+      - 1.1 varnish
+      X-Cache:
+      - MISS, MISS
+      X-Cache-Hits:
+      - 0, 0
+      X-Served-By:
+      - cache-mad22063-MAD, cache-mad22063-MAD
+      X-Timer:
+      - S1780130753.427757,VS0,VE117
+      alt-svc:
+      - h3=":443";ma=86400,h3-29=":443";ma=86400,h3-27=":443";ma=86400
+      cache-control:
+      - private, max-age=0, must-revalidate
+      content-encoding:
+      - gzip
+      content-type:
+      - application/json; charset=utf-8
+      server:
+      - Apache
+      strict-transport-security:
       - max-age=31536000; includeSubDomains; preload
-      Transfer-Encoding:
+      transfer-encoding:
       - chunked
-      Upgrade:
-      - h2,h2c
     status:
       code: 200
       message: OK

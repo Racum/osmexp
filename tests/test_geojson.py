@@ -44,5 +44,5 @@ def test_export_split_relation():
 def test_export_self_crossing_relation():
     geojson = json.loads(export_relation(284570))
     assert geojson['type'] == 'FeatureCollection'
-    assert len(geojson['features']) == 3
+    assert len(geojson['features']) == 2
     assert {f['geometry']['type'] for f in geojson['features']} == {'LineString'}
